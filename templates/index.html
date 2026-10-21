@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2ff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 { color: #263b80; }
+        form { margin: 20px; }
+        input, button, a {
+            padding: 10px;
+            margin: 5px;
+        }
+        table {
+            margin: auto;
+            background: white;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+        }
+        th { background: #263b80; color: white; }
+        a { text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Student Attendance Management System</h1>
+
+    <form method="POST">
+        <input name="name" placeholder="Student Name" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Present</th>
+            <th>Total Classes</th>
+            <th>Percentage</th>
+            <th>Mark Attendance</th>
+        </tr>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s[0] }}</td>
+            <td>{{ s[1] }}</td>
+            <td>{{ s[3] }}</td>
+            <td>{{ s[2] }}</td>
+            <td>
+                {{ "%.1f"|format(s[3] * 100 / s[2]) if s[2] else 0 }}%
+            </td>
+            <td>
+                <a href="/mark/{{ s[0] }}/Present">Present</a>
+                <a href="/mark/{{ s[0] }}/Absent">Absent</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
