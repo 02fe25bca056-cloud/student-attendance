@@ -33,15 +33,12 @@ This project is a web-based application developed using Python and Flask to mana
 
 ## 5. How to Run
 Install dependencies:
-
 `pip install -r requirements.txt`
 
 Run the application:
-
 `python app.py`
 
 Open in a browser:
-
 `http://localhost:5000`
 
 ## 6. Docker Commands
@@ -54,4 +51,4 @@ Run the container:
 `docker run -p 5000:5000 student-attendance`
 
 ## 7. Project Objective
-The objective is to learn web application development and DevOps tools, including GitHub, Docker, Kubernetes, and Jenkins.
+The objective is to learn web application development and DevOps tools, including GitHub, Docker and Jenkins.
